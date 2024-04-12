@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check if the script is executed with root user.
+# Check if the script is executed with the root user.
 UID=${UID}
 if [[ "${UID}" -ne "0" ]]
 then
@@ -24,8 +24,8 @@ then
 fi
 
 # Adding a password to the user account.
-
 echo ${PASSWORD} | passwd --stdin ${USER_NAME}
+# Force the password to be changed upon login.
 passwd -e ${USER_NAME}
 
 # Checking if the password was assigned successfully.
@@ -35,9 +35,9 @@ then
   exit 1
 fi
 
-# Display the username, password, and host name where the account was created.
+# Display the username, password, and hostname where the account was created.
 echo "The username of the account is ${USER_NAME}"
 echo "The password of the account is ${PASSWORD}"
-echo "The host name that created that account is $(hostname)"
+echo "The host name that created that account is ${HOSTNAME}"
 
 exit 0
