@@ -37,8 +37,11 @@ fi
 passwd -e ${USER_NAME}
 
 # Display the username, password, and hostname where the account was created.
-echo "The username of the account is ${USER_NAME}"
-echo "The password of the account is ${PASSWORD}"
-echo "The host name that created that account is ${HOSTNAME}"
+echo
+echo -e "The username of the account:\n${USER_NAME}"
+echo
+echo -e "The password of the account:\n${PASSWORD}"
+echo
+echo -e "The host name that created that account:\n${HOSTNAME}"
 
 exit 0
