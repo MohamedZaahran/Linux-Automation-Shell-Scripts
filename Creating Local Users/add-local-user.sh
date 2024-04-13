@@ -25,8 +25,6 @@ fi
 
 # Adding a password to the user account.
 echo ${PASSWORD} | passwd --stdin ${USER_NAME}
-# Force the password to be changed upon login.
-passwd -e ${USER_NAME}
 
 # Checking if the password was assigned successfully.
 if [[ "${?}" -ne "0" ]]
@@ -34,6 +32,9 @@ then
   echo 'An error occurred and cannot assign the password to the user.'
   exit 1
 fi
+
+# Force the password to be changed upon login.
+passwd -e ${USER_NAME}
 
 # Display the username, password, and hostname where the account was created.
 echo "The username of the account is ${USER_NAME}"
