@@ -19,7 +19,7 @@ adduser -c "${COMMENT}" -m ${USER_NAME}
 # Checking if the user account was created successfully.
 if [[ "${?}" -ne "0" ]]
 then
-  echo 'An error happened and cannot add the user.'
+  echo 'An error occurred and cannot add the user.'
   exit 1
 fi
 
@@ -31,7 +31,7 @@ passwd -e ${USER_NAME}
 # Checking if the password was assigned successfully.
 if [[ "${?}" -ne "0" ]]
 then
-  echo 'An error happened and cannot assign the password to the user.'
+  echo 'An error occurred and cannot assign the password to the user.'
   exit 1
 fi
 
