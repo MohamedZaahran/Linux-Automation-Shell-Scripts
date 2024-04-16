@@ -2,7 +2,7 @@
 Discover 6 crafted shell scripts tailored to automate a variety of mundane and time-consuming tasks within the Linux environment. Streamlining the workflow and boosting productivity.
 
 ### 1. [add-local-user.sh](Scripts/add-local-user.sh)
-**Description:** Adds users to the Linux system as the script is executed on. It prompts to enter the *USERNAME*, *COMMENT*, and *PASSWORD* to supply.
+**Description:** Adds users to the Linux system as the script is executed on. It prompts you to enter the *USERNAME*, *COMMENT*, and *PASSWORD* to supply.
 
 **Case Scenario:** Imagine that you are a Linux administrator and are constantly being interrupted by the help desk calling you to create new Linux accounts for all the people in the company. This script will save you!
 
@@ -31,15 +31,25 @@ Discover 6 crafted shell scripts tailored to automate a variety of mundane and t
 **Usage:** `./disable-local-user.sh [-dra] USER [USERN]...`
 
 ---
-### 5. [show-attackers.sh](Scripts/show-attackers.sh)
+### 5. [run-everywhere.sh](Scripts/run-everywhere.sh)
+**Description:** Enables the execution of a specified command across multiple servers from an admin server. By default, it reads server names from a predefined file, but you can override this behavior with the ***`-f`*** option. Other options include ***`-n`*** for dry run mode (which displays the command without executing it), ***`-s`*** for executing the command with sudo, and ***`-v`*** for verbose mode (which displays the server name before executing the command).
+
+**Case Scenario:** The number of systems you manage is growing and you need a way to quickly execute the exact same command on all of your systems. Because it takes too much of your time to type the same command on every single system you manage, you decide to use that script that will do this for you.
+<br>Let's say you need to update the software packages on all servers. Instead of logging into each server individually and running the update command, you can use this script. By specifying the update command along with the appropriate options, you can execute it across all servers with a single command.
+<br>This not only saves you time but also reduces the risk of human error, making server management more streamlined and reliable.
+
+**Usage:** `./run-everywhere.sh [-nsv] [-f FILE] COMMAND`
+
+---
+### 6. [show-attackers.sh](Scripts/show-attackers.sh)
 **Description:** This script analyzes syslog data to identify failed login attempts by IP address. It generates a CSV file listing IP addresses with more than 10 failed attempts along with their respective locations.
 
-**Case Scenario:** Imagine you're a security administrator responsible for monitoring login activity on a network of servers. Each day, you receive syslog files containing login data from multiple servers. Your task is to analyze this data to identify potential security threats, such as brute-force login attempts. Without automation, analyzing these syslog files manually would be a tedious and time-consuming process. This script automates that painful process, streamlining the analysis process, allowing you to quickly pinpoint suspicious activity and take appropriate action to enhance network security.
+**Case Scenario:** Imagine you're a security administrator responsible for monitoring login activity on a network of servers. Each day, you receive syslog files containing login data from multiple servers. Your task is to analyze this data to identify potential security threats, such as brute-force login attempts. Without automation, analyzing these syslog files manually would be a tedious and time-consuming process. This script automates that painful process, streamlining the analysis process, and allowing you to quickly pinpoint suspicious activity and take appropriate action to enhance network security.
 
 **Usage:** `./show-attackers.sh FILE_NAME`
 
 ---
-### 6. [extract-open-ports.sh](Scripts/extract-open-ports.sh)
+### 7. [extract-open-ports.sh](Scripts/extract-open-ports.sh)
 **Description:** Displays the open network ports on a system, sorting them in ascending order. By default, it shows all open TCP and UDP ports. Optionally, you can provide the ***`-4`*** to limit the output to TCPv4 ports only.
 
 **Case Scenario:** Imagine you are a system administrator responsible for managing multiple servers, you can quickly identify which network ports are currently open on a server and identify potential security vulnerabilities.
