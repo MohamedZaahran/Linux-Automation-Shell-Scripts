@@ -77,7 +77,7 @@ do
   esac
 done
 
-# Removing the options.
+# Remove the options while leaving the remaining arguments.
 OPTIONS_NUMBER=$(( OPTIND - 1 ))
 shift "$(( OPTIND - 1 ))"
 
